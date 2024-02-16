@@ -13,5 +13,4 @@ export default defineConfig({
     }),
     react(),
   ],
-  redirects: [{ from: "/", to: "./public/Amirzhan_Aliyev_SE_2024.docx" }],
 });
