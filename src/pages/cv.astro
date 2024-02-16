@@ -1,0 +1,22 @@
+---
+import '../styles/globals.css'
+import Layout from '../layouts/IndexLayout.astro';
+---
+
+<Layout>
+	<main class="h-screen overflow-hidden">
+	</main>
+</Layout>
+
+<style>
+body { overflow: hidden;}
+  @media (prefers-reduced-motion: reduce) {
+       :global(#starfield) {
+      @apply hidden;
+    }
+  }
+</style>
+
+<script>
+    document.getElementById('cvLink').click();
+</script>
