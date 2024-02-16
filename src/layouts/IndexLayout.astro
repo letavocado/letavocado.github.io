@@ -1,0 +1,25 @@
+---
+import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+type Props = HeadProps;
+
+const { ...head } = Astro.props;
+---
+
+<!doctype html>
+<meta charset="utf-8" />
+<html lang="en">
+	<head>
+		<BaseHead {...head} />
+		<body class="overflow-x-hidden">
+			<div class="glow"></div>
+			<Header />
+      <div class="max-w-screen-lg mx-auto px-4">
+        <slot />
+        <Footer />
+      </div>
+		</body>
+	</head>
+</html>

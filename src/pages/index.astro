@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import '../styles/globals.css'
+import Layout from '../layouts/IndexLayout.astro';
+
+const posts = await getCollection('releases');
+posts.sort((a, b) => +b.data.date - +a.data.date);
+---
+
+<Layout>
+	<main class="h-screen">
+		<h1 class="page_title">Posts</h1>
+		<hr />
+		<ul class="posts" transition:name="post">
+			{
+				posts.map((post) => (
+					<li class="post">
+						<div class="version_wrapper">
+							<div class="version_info">
+								<a href={`/releases/${post.slug}`}>
+									<div class="version_number">{post.data.versionNumber}</div>
+									<FormattedDate class="date" date={post.data.date} />
+								</a>
+							</div>
+						</div>
+						<div class="content">
+							{post.render().then(({ Content }) => (
+								<Content />
+							))}
+						</div>
+					</li>
+				))
+			}
+		</ul>
+	</main>
+</Layout>
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+       :global(#starfield) {
+      @apply hidden;
+    }
+  }
+</style>
