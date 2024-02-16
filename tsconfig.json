@@ -8,5 +8,8 @@
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
-  }
+  },
+  "exclude": [
+    "src/components/Header.astro" // Exclude the specific file causing the error
+  ]
 }
