@@ -16,8 +16,10 @@ const { ...head } = Astro.props;
 		<body class="overflow-x-hidden">
 			<div class="glow"></div>
 			<Header />
-			<slot />
-			<Footer />
+      <div class="max-w-screen-lg mx-auto px-4">
+        <slot />
+        <Footer />
+      </div>
 		</body>
 	</head>
 </html>
