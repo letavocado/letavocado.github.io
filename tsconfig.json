@@ -2,14 +2,11 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "baseUrl": "/home/letavocado/Repos/github/letavocado.github.io",
-    "noEmitOnError": false,
+    "noEmitOnError": true,
     "paths": {
       "@/*": ["./src/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
-  },
-  "exclude": [
-    "src/components/Header.astro" // Exclude the specific file causing the error
-  ]
+  }
 }
